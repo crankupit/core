@@ -12,7 +12,8 @@ class CoreServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        // Force load the Passport Service Provider
+        // 1. Force Register Passport's Service Provider
+        // This makes the 'php artisan passport:*' commands available.
         if (class_exists(\Laravel\Passport\PassportServiceProvider::class)) {
             $this->app->register(\Laravel\Passport\PassportServiceProvider::class);
         }
@@ -20,14 +21,11 @@ class CoreServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // Register Passport Routes
-        // Note: In newer Laravel/Passport versions, routes are registered automatically 
-        // by the provider we just registered above.
+        // 2. Register Passport Routes (The API Endpoints)
+        // This opens routes like /oauth/token
+        Passport::enablePasswordGrant();
 
-        // We can set default scopes here if needed
-        // Passport::setDefaultScope(['*']);
-
-        // The Volkrex Status Route
+        // 3. Status Route
         Route::get('volkrex-status', function () {
             return [
                 'status' => 'The Empire is Operational',
