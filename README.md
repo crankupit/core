@@ -19,3 +19,23 @@ This package is distributed via the **CrankUpIt Forge**.
 ```bash
 composer require crankupit/core
 ```
+
+## ⚡ Usage
+
+The Core Service Provider is automatically discovered by the Volkrex Dominion Engine.
+
+```php
+use CrankUpIt\Core\Facades\Volk;
+
+// Verify Identity
+Volk::verify($identity);
+```
+
+## 🏛 Authors
+
+**Volkrex Digital Infrastructure**
+
+- **Role:** Sovereign Architect
+- **ID:** 1111-VOLK-REX-9999
+
+#### Forged by CrankUpIt.
