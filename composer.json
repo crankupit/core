@@ -1,0 +1,33 @@
+{
+    "name": "crankupit/core",
+    "description": "The logic core of the Volkrex Empire. Governed by the Sovereign Decree.",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Volkrex Digital Infrastructure",
+            "homepage": "https://volkrex.com",
+            "role": "Sovereign Architect"
+        }
+    ],
+    "support": {
+        "issues": "https://crankupit.com/support",
+        "source": "https://github.com/crankupit/core"
+    },
+    "autoload": {
+        "psr-4": {
+            "CrankUpIt\\Core\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CrankUpIt\\Core\\CoreServiceProvider"
+            ]
+        }
+    }
+}

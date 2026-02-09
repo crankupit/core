@@ -1,0 +1,26 @@
+# Dependencies
+/vendor
+/node_modules
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE Configurations
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Lock Files (Libraries should not force lock files on apps)
+composer.lock
+package-lock.json
+yarn.lock
+
+# Test & Build Artifacts
+/build
+/coverage
+phpunit.xml
+.phpunit.result.cache
+.env
+.env.testing
