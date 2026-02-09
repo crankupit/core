@@ -21,11 +21,20 @@ class CoreServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // 2. Register Passport Routes (The API Endpoints)
+        // 1. Register Passport Routes (The API Endpoints)
         // This opens routes like /oauth/token
         Passport::enablePasswordGrant();
 
-        // 3. Status Route
+        // 2. Identity Route (Protected by Passport Middleware)
+        Route::middleware('auth:api')->get('/volkrex-identity', function (\Illuminate\Http\Request $request) {
+            return [
+                'message' => 'Identity Verified. Welcome to the Citadel.',
+                'citizen' => $request->user(), // Returns the User object (Rex)
+                'scope' => 'sovereign'
+            ];
+        });
+
+        // 3. Status Route (Open to the Public, No Authentication Required)
         Route::get('volkrex-status', function () {
             return [
                 'status' => 'The Empire is Operational',
