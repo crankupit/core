@@ -21,13 +21,19 @@
     },
     "require": {
         "php": "^8.2",
-        "illuminate/support": "^11.0|^12.0"
+        "illuminate/support": "^11.0|^12.0",
+        "laravel/passport": "^13.4"
     },
     "extra": {
         "laravel": {
             "providers": [
                 "CrankUpIt\\Core\\CoreServiceProvider"
             ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
         }
     }
 }
